@@ -35,9 +35,9 @@
         
         $scope.selectedTeam = "https://statsapi.web.nhl.com/api/v1/teams/24?hydrate=roster(person(stats(splits=statsSingleSeason)))";
         
-        $scope.selectedTeamStats = "https://statsapi.web.nhl.com/api/v1/teams/24?hydrate=record(teamRecords)&season=20182019";
+        $scope.selectedTeamStats = "https://statsapi.web.nhl.com/api/v1/teams/24?hydrate=record(teamRecords)&season=20192020";
         
-        $http.get("https://statsapi.web.nhl.com/api/v1/teams?hydrate=record(teamRecords)&season=20182019").success(function(data){
+        $http.get("https://statsapi.web.nhl.com/api/v1/teams?hydrate=record(teamRecords)&season=20192020").success(function(data){
             $scope.teamsData = data; 
             
         }).error(function(){
@@ -80,7 +80,7 @@
         $scope.changeTeamStats = function(arg){
             $scope.playerIDs = [];
             console.log(arg);
-            $http.get("https://statsapi.web.nhl.com/api/v1/teams/"+arg+"?hydrate=record(teamRecords)&season=20182019").success(function(data){
+            $http.get("https://statsapi.web.nhl.com/api/v1/teams/"+arg+"?hydrate=record(teamRecords)&season=20192020").success(function(data){
                 console.log("got the team data....");
                 $scope.teamStatsData = data;              
                 
@@ -88,7 +88,7 @@
                 console.log("There is an issue getting the data, you might be offline. You might be able to navigate to another team that you have already viewed though.")
             });
             
-            //http://statsapi.web.nhl.com/api/v1/teams/1?hydrate=record(teamRecords)&season=20182019
+            //http://statsapi.web.nhl.com/api/v1/teams/1?hydrate=record(teamRecords)&season=20192020
         };
         
         
